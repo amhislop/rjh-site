@@ -7,8 +7,8 @@ const breakpoints = require('./breakpoints.min.js');
 const browser = require('./breakpoints.min.js');
 
 (function($) {
-  const $window = $(window);
-  const $body = $('body');
+  // const $window = $(window);
+  // const $body = $('body');
   const $header = $('#header');
   const $footer = $('#footer');
   const $main = $('#main');
@@ -30,16 +30,23 @@ const browser = require('./breakpoints.min.js');
   });
 
   // Play initial animations on page load.
-  $window.on('load', function() {
+  document.addEventListener('DOMContentLoaded', () => {
     window.setTimeout(function() {
-      $body.removeClass('is-preload');
+      document.body.classList.remove('is-preload');
     }, 100);
   });
+
+  // $window.on('load', function() {
+  //   window.setTimeout(function() {
+  //     $body.removeClass('is-preload');
+  //   }, 100);
+  // });
 
   // Touch?
   if (browser.mobile) {
     // Turn on touch mode.
-    $body.addClass('is-touch');
+    document.body.classList.add('is-touch');
+    // $body.addClass('is-touch');
 
     // Height fix (mostly for iOS).
     window.setTimeout(function() {
