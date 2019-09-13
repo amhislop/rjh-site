@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx node-sass assets/sass/main.scss assets/css/main.min.css --watch",
-    "build": "npx node-sass assets/sass/main.scss assets/css/main.min.css && npx parcel build index.pug",
+    "build": "npx node-sass assets/sass/main.scss assets/css/main.min.css && npx parcel build index.pug --public-url ./",
     "watch": "npx parcel index.pug"
   },
   "keywords": [],
