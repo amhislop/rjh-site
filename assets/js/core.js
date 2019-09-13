@@ -89,21 +89,21 @@ const browser = require('./breakpoints.min.js');
   // Main Sections: Two.
 
   // Lightbox gallery.
-  $window.on('load', function() {
-    $('#two').poptrox({
-      caption($a) {
-        return $a.next('h3').text();
-      },
-      overlayColor: '#2c2c2c',
-      overlayOpacity: 0.85,
-      popupCloserText: '',
-      popupLoaderText: '',
-      selector: '.work-item a.image-preview',
-      usePopupCaption: true,
-      usePopupDefaultStyling: false,
-      usePopupEasyClose: false,
-      usePopupNav: true,
-      windowMargin: breakpoints.active('<=small') ? 0 : 50,
-    });
-  });
+  // $window.on('load', function() {
+  //   $('#two').poptrox({
+  //     caption($a) {
+  //       return $a.next('h3').text();
+  //     },
+  //     overlayColor: '#2c2c2c',
+  //     overlayOpacity: 0.85,
+  //     popupCloserText: '',
+  //     popupLoaderText: '',
+  //     selector: '.work-item a.image-preview',
+  //     usePopupCaption: true,
+  //     usePopupDefaultStyling: false,
+  //     usePopupEasyClose: false,
+  //     usePopupNav: true,
+  //     windowMargin: breakpoints.active('<=small') ? 0 : 50,
+  //   });
+  // });
 })(jQuery);
