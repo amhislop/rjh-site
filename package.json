@@ -1,22 +1,29 @@
 {
-  "name": "ryanhislop",
+  "name": "rjhsite",
   "version": "1.0.0",
   "description": "Strata by HTML5 UP\r html5up.net | @ajlkn\r Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)",
   "main": "index.js",
   "scripts": {
-    "start": "npx node-sass assets/sass/main.scss assets/css/main.min.css --watch",
-    "build": "npx node-sass assets/sass/main.scss assets/css/main.min.css && npx parcel build index.pug --public-url ./",
-    "watch": "npx parcel index.pug"
+    "start": "run-p dev:*",
+    "build": "run-s clean build:* post",
+    "build:sass": "npx node-sass assets/sass/main.scss assets/css/main.min.css",
+    "build:parcel": "npx parcel build index.pug --public-url ./ --no-source-maps",
+    "dev:sass": "npx node-sass assets/sass/main.scss assets/css/main.min.css --watch",
+    "dev:parcel": "npx parcel index.pug",
+    "css": "purifycss dist/main.*.css dist/*.html dist/*.js -o dist/bundle.css --info --min",
+    "clean": "rm dist/*",
+    "post": "node post-dist.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "node-sass": "^4.12.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "cssnano": "^4.1.10",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
     "pug": "^2.0.4",
+    "purify-css": "^1.2.5",
     "sass": "^1.22.12"
   }
 }
