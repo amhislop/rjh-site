@@ -313,7 +313,10 @@ var breakpoints = require('./breakpoints.min.js');
 
 var browser = require('./browser.min.js');
 
+var version = 1.0;
+
 (function () {
+  console.log("Version: ".concat(version));
   var header = document.getElementById('header');
   var footer = document.getElementById('footer');
   var main = document.getElementById('main');

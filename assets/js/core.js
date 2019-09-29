@@ -2,7 +2,10 @@
 const breakpoints = require('./breakpoints.min.js');
 const browser = require('./browser.min.js');
 
+const version = 1.0;
+
 (() => {
+  console.log(`Version: ${version}`);
   const header = document.getElementById('header');
   const footer = document.getElementById('footer');
   const main = document.getElementById('main');
