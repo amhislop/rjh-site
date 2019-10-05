@@ -1,6 +1,9 @@
 .inner
   a.image.avatar(href="./")
-    img(src="/images/dr-ryan-hislop.jpg" alt="Dr Ryan Hislop")
+    picture
+      source(srcset="/images/dr-ryan-hislop.webp" type="image/webp")
+      source(srcset="/images/dr-ryan-hislop.jpg" type="image/jpeg")
+      img(src="/images/dr-ryan-hislop.jpg" alt="Dr Ryan Hislop")
   h1
     strong Dr Ryan Hislop
     |  is a Chriopractor <br>at the 
