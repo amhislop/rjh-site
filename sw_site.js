@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-const cacheName = 'v3';
+const cacheName = 'v1.0';
 
 // Call Install Event
 // eslint-disable-next-line no-unused-vars
