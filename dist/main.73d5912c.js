@@ -117,47 +117,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"sw_site.js":[function(require,module,exports) {
-/* eslint-disable no-restricted-globals */
-var cacheName = 'v1.0'; // Call Install Event
-// eslint-disable-next-line no-unused-vars
+})({"assets/css/fontawesome-all.min.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
 
-self.addEventListener('install', function (e) {
-  console.log('Service Worker: Installed');
-}); // Call Activate Event
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./../webfonts/fa-brands-400.eot":[["fa-brands-400.87796836.eot","assets/webfonts/fa-brands-400.eot"],"assets/webfonts/fa-brands-400.eot"],"./../webfonts/fa-brands-400.woff2":[["fa-brands-400.d93be1a7.woff2","assets/webfonts/fa-brands-400.woff2"],"assets/webfonts/fa-brands-400.woff2"],"./../webfonts/fa-brands-400.woff":[["fa-brands-400.4cb2c041.woff","assets/webfonts/fa-brands-400.woff"],"assets/webfonts/fa-brands-400.woff"],"./../webfonts/fa-brands-400.ttf":[["fa-brands-400.a1118f27.ttf","assets/webfonts/fa-brands-400.ttf"],"assets/webfonts/fa-brands-400.ttf"],"./../webfonts/fa-brands-400.svg":[["fa-brands-400.a2e9c106.svg","assets/webfonts/fa-brands-400.svg"],"assets/webfonts/fa-brands-400.svg"],"./../webfonts/fa-regular-400.eot":[["fa-regular-400.13f3f778.eot","assets/webfonts/fa-regular-400.eot"],"assets/webfonts/fa-regular-400.eot"],"./../webfonts/fa-regular-400.woff2":[["fa-regular-400.582fe025.woff2","assets/webfonts/fa-regular-400.woff2"],"assets/webfonts/fa-regular-400.woff2"],"./../webfonts/fa-regular-400.woff":[["fa-regular-400.cb15cd91.woff","assets/webfonts/fa-regular-400.woff"],"assets/webfonts/fa-regular-400.woff"],"./../webfonts/fa-regular-400.ttf":[["fa-regular-400.4f3d57c9.ttf","assets/webfonts/fa-regular-400.ttf"],"assets/webfonts/fa-regular-400.ttf"],"./../webfonts/fa-regular-400.svg":[["fa-regular-400.e2e35b4e.svg","assets/webfonts/fa-regular-400.svg"],"assets/webfonts/fa-regular-400.svg"],"./../webfonts/fa-solid-900.eot":[["fa-solid-900.e78bf4b8.eot","assets/webfonts/fa-solid-900.eot"],"assets/webfonts/fa-solid-900.eot"],"./../webfonts/fa-solid-900.woff2":[["fa-solid-900.ecad084d.woff2","assets/webfonts/fa-solid-900.woff2"],"assets/webfonts/fa-solid-900.woff2"],"./../webfonts/fa-solid-900.woff":[["fa-solid-900.7e049d57.woff","assets/webfonts/fa-solid-900.woff"],"assets/webfonts/fa-solid-900.woff"],"./../webfonts/fa-solid-900.ttf":[["fa-solid-900.88f3ccb9.ttf","assets/webfonts/fa-solid-900.ttf"],"assets/webfonts/fa-solid-900.ttf"],"./../webfonts/fa-solid-900.svg":[["fa-solid-900.38bc732a.svg","assets/webfonts/fa-solid-900.svg"],"assets/webfonts/fa-solid-900.svg"],"_css_loader":"../../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js"}],"assets/sass/main.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
 
-self.addEventListener('activate', function (e) {
-  console.log('Service Worker: Activated'); // Remove unwanted caches
-
-  e.waitUntil(caches.keys().then(function (cacheNames) {
-    return Promise.all( // eslint-disable-next-line array-callback-return
-    cacheNames.map(function (cache) {
-      if (cache !== cacheName) {
-        console.log('Service Worker: Clearing Old Cache');
-        return caches.delete(cache);
-      }
-    }));
-  }));
-}); // Call Fetch Event
-
-self.addEventListener('fetch', function (e) {
-  console.log('Service Worker: Fetching');
-  e.respondWith(fetch(e.request).then(function (res) {
-    // Make copy/clone of response
-    var resClone = res.clone(); // Open cahce
-
-    caches.open(cacheName).then(function (cache) {
-      // Add response to cache
-      cache.put(e.request, resClone);
-    });
-    return res;
-  }).catch(function (err) {
-    return caches.match(e.request).then(function (res) {
-      return res;
-    });
-  }));
-});
-},{}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"../css/fontawesome-all.min.css":"assets/css/fontawesome-all.min.css","./../css/images/overlay.png":[["overlay.d59a36c4.png","assets/css/images/overlay.png"],"assets/css/images/overlay.png"],"./../../images/bg.jpg":[["bg.43bfd8b0.jpg","images/bg.jpg"],"images/bg.jpg"],"_css_loader":"../../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js"}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -361,5 +331,144 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js","sw_site.js"], null)
-//# sourceMappingURL=/sw_site.js.map
+},{}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/bundle-loader.js":[function(require,module,exports) {
+var getBundleURL = require('./bundle-url').getBundleURL;
+
+function loadBundlesLazy(bundles) {
+  if (!Array.isArray(bundles)) {
+    bundles = [bundles];
+  }
+
+  var id = bundles[bundles.length - 1];
+
+  try {
+    return Promise.resolve(require(id));
+  } catch (err) {
+    if (err.code === 'MODULE_NOT_FOUND') {
+      return new LazyPromise(function (resolve, reject) {
+        loadBundles(bundles.slice(0, -1)).then(function () {
+          return require(id);
+        }).then(resolve, reject);
+      });
+    }
+
+    throw err;
+  }
+}
+
+function loadBundles(bundles) {
+  return Promise.all(bundles.map(loadBundle));
+}
+
+var bundleLoaders = {};
+
+function registerBundleLoader(type, loader) {
+  bundleLoaders[type] = loader;
+}
+
+module.exports = exports = loadBundlesLazy;
+exports.load = loadBundles;
+exports.register = registerBundleLoader;
+var bundles = {};
+
+function loadBundle(bundle) {
+  var id;
+
+  if (Array.isArray(bundle)) {
+    id = bundle[1];
+    bundle = bundle[0];
+  }
+
+  if (bundles[bundle]) {
+    return bundles[bundle];
+  }
+
+  var type = (bundle.substring(bundle.lastIndexOf('.') + 1, bundle.length) || bundle).toLowerCase();
+  var bundleLoader = bundleLoaders[type];
+
+  if (bundleLoader) {
+    return bundles[bundle] = bundleLoader(getBundleURL() + bundle).then(function (resolved) {
+      if (resolved) {
+        module.bundle.register(id, resolved);
+      }
+
+      return resolved;
+    }).catch(function (e) {
+      delete bundles[bundle];
+      throw e;
+    });
+  }
+}
+
+function LazyPromise(executor) {
+  this.executor = executor;
+  this.promise = null;
+}
+
+LazyPromise.prototype.then = function (onSuccess, onError) {
+  if (this.promise === null) this.promise = new Promise(this.executor);
+  return this.promise.then(onSuccess, onError);
+};
+
+LazyPromise.prototype.catch = function (onError) {
+  if (this.promise === null) this.promise = new Promise(this.executor);
+  return this.promise.catch(onError);
+};
+},{"./bundle-url":"../../../../../usr/local/lib/node_modules/parcel/src/builtins/bundle-url.js"}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/loaders/browser/js-loader.js":[function(require,module,exports) {
+module.exports = function loadJSBundle(bundle) {
+  return new Promise(function (resolve, reject) {
+    var script = document.createElement('script');
+    script.async = true;
+    script.type = 'text/javascript';
+    script.charset = 'utf-8';
+    script.src = bundle;
+
+    script.onerror = function (e) {
+      script.onerror = script.onload = null;
+      reject(e);
+    };
+
+    script.onload = function () {
+      script.onerror = script.onload = null;
+      resolve();
+    };
+
+    document.getElementsByTagName('head')[0].appendChild(script);
+  });
+};
+},{}],0:[function(require,module,exports) {
+var b=require("../../../../../usr/local/lib/node_modules/parcel/src/builtins/bundle-loader.js");b.register("js",require("../../../../../usr/local/lib/node_modules/parcel/src/builtins/loaders/browser/js-loader.js"));b.load([]);
+},{}]},{},["../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js",0], null)
+//# sourceMappingURL=/main.73d5912c.js.map

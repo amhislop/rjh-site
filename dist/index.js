@@ -117,47 +117,74 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"sw_site.js":[function(require,module,exports) {
-/* eslint-disable no-restricted-globals */
-var cacheName = 'v1.0'; // Call Install Event
-// eslint-disable-next-line no-unused-vars
+})({"../../../../../usr/local/lib/node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-self.addEventListener('install', function (e) {
-  console.log('Service Worker: Installed');
-}); // Call Activate Event
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
 
-self.addEventListener('activate', function (e) {
-  console.log('Service Worker: Activated'); // Remove unwanted caches
+  return bundleURL;
+}
 
-  e.waitUntil(caches.keys().then(function (cacheNames) {
-    return Promise.all( // eslint-disable-next-line array-callback-return
-    cacheNames.map(function (cache) {
-      if (cache !== cacheName) {
-        console.log('Service Worker: Clearing Old Cache');
-        return caches.delete(cache);
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
       }
-    }));
-  }));
-}); // Call Fetch Event
+    }
 
-self.addEventListener('fetch', function (e) {
-  console.log('Service Worker: Fetching');
-  e.respondWith(fetch(e.request).then(function (res) {
-    // Make copy/clone of response
-    var resClone = res.clone(); // Open cahce
+    cssTimeout = null;
+  }, 50);
+}
 
-    caches.open(cacheName).then(function (cache) {
-      // Add response to cache
-      cache.put(e.request, resClone);
-    });
-    return res;
-  }).catch(function (err) {
-    return caches.match(e.request).then(function (res) {
-      return res;
-    });
-  }));
-});
-},{}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../../../usr/local/lib/node_modules/parcel/src/builtins/bundle-url.js"}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -361,5 +388,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js","sw_site.js"], null)
-//# sourceMappingURL=/sw_site.js.map
+},{}]},{},["../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/index.js.map
