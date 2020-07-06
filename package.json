@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "run-p dev:*",
-    "build": "run-s clean build:* post",
+    "build": "run-s build:* post",
     "build:sass": "npx node-sass assets/sass/main.scss assets/css/main.min.css",
     "build:parcel": "npx parcel build index.pug --public-url ./ --no-source-maps",
     "dev:sass": "npx node-sass assets/sass/main.scss assets/css/main.min.css --watch",
