@@ -1,8 +1,8 @@
 {
-  "name": "rjhsite",
+  "name": "ryan-hislop-website",
   "version": "1.0.0",
-  "description": "Strata by HTML5 UP\r html5up.net | @ajlkn\r Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)",
-  "main": "index.js",
+  "description": "Dr Ryan Hislop personal professional website",
+  "main": "index.pug",
   "scripts": {
     "start": "run-p dev:*",
     "build": "run-s build:* post",
@@ -15,8 +15,8 @@
     "post": "node post-dist.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Aidan Hislop <aidanhislop@gmail.com> (https://aidanhislop.com)",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "cssnano": "^4.1.10",

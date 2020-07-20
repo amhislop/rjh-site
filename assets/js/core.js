@@ -6,16 +6,16 @@ const version = 1.0;
 
 (() => {
   // Make sure sw are supported
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker
-        .register('../../sw_site.js')
-        .then(reg => console.log('Service Worker: Registered (Site)'))
-        .catch(err => console.log(`Service Worker: Error: ${err}`));
-    });
-  }
+  // if ('serviceWorker' in navigator) {
+  //   window.addEventListener('load', () => {
+  //     navigator.serviceWorker
+  //       .register('../../sw_site.js')
+  //       .then(reg => console.log('Service Worker: Registered (Site)'))
+  //       .catch(err => console.log(`Service Worker: Error: ${err}`));
+  //   });
+  // }
 
-  console.log(`Version: ${version}`);
+  // console.log(`Version: ${version}`);
   const header = document.getElementById('header');
   const footer = document.getElementById('footer');
   const main = document.getElementById('main');
@@ -71,8 +71,9 @@ const version = 1.0;
 
   if (settings.parallax) {
     const strataParallax = () => {
-      header.style.backgroundPosition = `left ${-1 *
-        (parseInt(window.pageYOffset) / settings.parallaxFactor)}px`;
+      header.style.backgroundPosition = `left ${
+        -1 * (parseInt(window.pageYOffset) / settings.parallaxFactor)
+      }px`;
     };
 
     breakpoints.on('<=medium', () => {
