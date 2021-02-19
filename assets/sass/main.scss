@@ -5,7 +5,7 @@
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
 @import 'libs/util';
-@import url('../css/fontawesome-all.min.css');
+// @import url('../css/fontawesome-all.min.css');
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 
 /*
@@ -1083,7 +1083,7 @@ $size-header-pad: 4em;
 		@include vendor('justify-content', 'space-between');
 		background-color:		_palette(accent2, bg);
 		background-attachment:	scroll,								scroll;
-		background-image:		url('../css/images/overlay.png'),			url('../../images/bg.jpg');
+		background-image:		url('../css/images/overlay.png'),			url('../../images/bg.webp');
 		background-position:	top left,							top left;
 		background-repeat:		repeat,								no-repeat;
 		background-size:		auto,								150%;
@@ -1673,4 +1673,19 @@ $size-header-pad: 4em;
 
 	#three p a {
     color: inherit;
+	}
+
+	// Font awesome svgs
+	.svg-inline--fa {
+
+		&.fa-home {
+			width: 22.5px;
+			@include breakpoint('<=small') {
+				width: 18px;
+			}
+		}
+
+		.icons & {
+			height: 24px;
+		}
 	}
