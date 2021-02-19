@@ -1,5 +1,8 @@
 @import url("../css/fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
+.uppercase {
+  text-transform: uppercase; }
+
 /*
 	Strata by HTML5 UP
 	html5up.net | @ajlkn
@@ -117,6 +120,9 @@ h1, h2, h3, h4, h5, h6 {
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: inherit;
     text-decoration: none; }
+
+address a {
+  color: inherit; }
 
 h1 {
   font-size: 2em;
@@ -1005,6 +1011,10 @@ header h6 + p {
 header.major h2 {
   font-size: 2em; }
 
+header.major section {
+  font-size: 1.1em;
+  line-height: 1.8em; }
+
 /* Form */
 form {
   margin: 0 0 2em 0; }
@@ -1614,21 +1624,35 @@ input[type="button"],
     -webkit-flex-grow: 1;
     -ms-flex-grow: 1;
     flex-grow: 1;
-    margin: 0 0 2em 0; }
+    margin: 0 0 2em 0;
+    display: inherit;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; }
+    #header > .inner ul {
+      padding: 0; }
+      #header > .inner ul li {
+        padding: 0;
+        list-style: none; }
   #header strong, #header b {
     color: #ffffff; }
   #header h2, #header h3, #header h4, #header h5, #header h6 {
     color: #ffffff; }
-  #header h1 {
+  #header h1, #header h2 {
     color: rgba(255, 255, 255, 0.5);
     font-size: 1.35em;
     line-height: 1.75em;
     margin: 0; }
+  #header h2 {
+    font-size: 1.2em; }
   #header .image.avatar {
     margin: 0 0 1em 0;
     width: 9.375em; }
 
 /* Footer */
+#footer > .inner {
+  text-align: center; }
+
 #footer .icons {
   margin: 1em 0 0 0; }
   #footer .icons a {
@@ -1987,6 +2011,8 @@ body.is-touch .poptrox-popup .closer {
     text-align: center; }
   header.major h2 {
     font-size: 1.35em; }
+  header.major section {
+    line-height: 1.6; }
   /* List */
   ul.labeled-icons li {
     padding-left: 2em; }

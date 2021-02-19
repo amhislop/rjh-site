@@ -4,6 +4,7 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'libs/html-grid';
+@import 'libs/util';
 @import url('../css/fontawesome-all.min.css');
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 
@@ -166,6 +167,10 @@ $size-header-pad: 4em;
 			color: inherit;
 			text-decoration: none;
 		}
+	}
+
+	address a {
+		color: inherit;
 	}
 
 	h1 {
@@ -370,6 +375,10 @@ $size-header-pad: 4em;
 		&.major {
 			h2 {
 				font-size: 2em;
+			}
+			section {
+				font-size: 1.1em;
+				line-height: 1.8em;
 			}
 		}
 	}
@@ -1095,6 +1104,18 @@ $size-header-pad: 4em;
 		> .inner {
 			@include vendor('flex-grow', '1');
 			margin: 0 0 ($size-header-pad * 0.5) 0;
+			display: inherit;
+			align-items: center;
+			flex-direction: column;
+			text-align: center;
+
+			ul {
+				padding: 0;
+				li {
+					padding: 0;
+					list-style: none;
+				}
+			}
 		}
 
 		strong, b {
@@ -1105,11 +1126,16 @@ $size-header-pad: 4em;
 			color: _palette(accent2, fg-bold);
 		}
 
-		h1 {
+		h1, h2 {
 			color: _palette(accent2, fg);
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;
+			// text-align: center;
+		}
+
+		h2 {
+			font-size: 1.2em;
 		}
 
 		.image.avatar {
@@ -1121,6 +1147,11 @@ $size-header-pad: 4em;
 /* Footer */
 
 	#footer {
+
+		> .inner {
+			text-align: center;
+		}
+
 		.icons {
 			margin: (_size(element-margin) * 0.5) 0 0 0;
 
@@ -1384,6 +1415,10 @@ $size-header-pad: 4em;
 					}
 				}
 
+				// h2 {
+					
+				// }
+
 				> .inner {
 					margin-bottom: 0;
 				}
@@ -1538,6 +1573,10 @@ $size-header-pad: 4em;
 				&.major {
 					h2 {
 						font-size: 1.35em;
+					}
+
+					section {
+						line-height: 1.6;
 					}
 				}
 			}
