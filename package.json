@@ -1,13 +1,13 @@
 {
   "name": "ryan-hislop-website",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dr Ryan Hislop personal professional website",
   "main": "index.pug",
   "scripts": {
     "start": "run-p dev:*",
     "build": "run-s build:* post",
     "build:sass": "npx node-sass assets/sass/main.scss assets/css/main.min.css",
-    "build:parcel": "npx parcel build index.pug --public-url ./ --no-source-maps",
+    "build:parcel": "npx parcel@1.12.3 build index.pug --public-url ./ --no-source-maps",
     "dev:sass": "npx node-sass assets/sass/main.scss assets/css/main.min.css --watch",
     "dev:parcel": "npx parcel index.pug",
     "css": "purifycss dist/main.*.css dist/*.html dist/*.js -o dist/bundle.css --info --min",
@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.13.8",
     "cssnano": "^4.1.10",
     "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
