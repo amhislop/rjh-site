@@ -7,7 +7,7 @@
     "start": "run-p dev:*",
     "build": "run-s build:* post",
     "build:sass": "npx node-sass assets/sass/main.scss assets/css/main.min.css",
-    "build:parcel": "npx parcel build index.pug --public-url ./ --no-source-maps",
+    "build:parcel": "npx parcel@1.12.3 build index.pug --public-url ./ --no-source-maps",
     "dev:sass": "npx node-sass assets/sass/main.scss assets/css/main.min.css --watch",
     "dev:parcel": "npx parcel index.pug",
     "css": "purifycss dist/main.*.css dist/*.html dist/*.js -o dist/bundle.css --info --min",
