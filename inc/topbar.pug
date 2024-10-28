@@ -1,0 +1,23 @@
+.mainmenu
+  div.mobile-open-button-wrapper
+    label.mobile-menu-button.hamburger-icon
+      input.open-navigation.navigation-closed(type="radio" name="toggle-navigation" autocomplete="off")
+      span.visually-hidden Open Navigation
+  nav.site-navigation
+    .navigation-animation-wrapper
+      label.mobile-menu-button.close-icon
+        input.close-navigation.navigation-opened(type="radio" name="toggle-navigation" autocomplete="off")
+        span.visually-hidden Close navigation
+
+      ul.nav-list
+        li(style="--index: 0")
+          a(href="./#aboutus") About Us
+        li(style="--index: 1")
+          a(href="./for-doctors.pug") For Doctors 
+        li(style="--index: 2")
+          a(href="https://alignedchiro.com.au/pages/orange-booking-page" target='_blank' rel='noopener') For Patients
+        li(style="--index: 3")
+          a(href="./frequently-asked-questions.pug") Frequently Asked Questions
+        li(style="--index: 4")
+          a.contact(href="tel:0263628496") Call 02 6362 8496
+        li(style="--index: 5")

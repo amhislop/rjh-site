@@ -8,8 +8,30 @@ html(lang="en")
       iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-P7NZSBW", height="0", width="0", style="display:none;visibility:hidden")
     header#header
       include inc/header
+    include inc/topbar
     #main
-      include inc/intro
+      //- include inc/intro
+      section#one
+        header.major
+          p.h3#aboutus Ryan Hislop is an experienced and evidence-based diagnostician based in Orange and has been serving the Central West of NSW over this past 15 years. He has gone on to complete further study to be one of only a handful of Chiropractors in Australia to have completed advanced post-graduate training in orthopedics to become a Diplomate of the International Academy of Neuromusculoskeletal Medicine (DIANM).
+        section
+          p If you have a spine-related problem and are looking for answers, Dr Ryan Hislop (Chiropractor) is a recognised leader in his field and will give you a comprehensive diagnosis, logical explanations and individual treatment. 
+          h4 Conditions commonly cared for:
+          ul
+            li Lower back pain
+            li Neck pain
+            li Headaches and Migraine
+            li Disc Bulges and Herniations
+            li Sciatica
+            li Vertigo and balance disorders
+            li Spondylosis/Spinal Osteoarthritis
+            li Spondylolithesis
+          p Ryan has also completed training in multiple techniques to suit patients through a range of ages from young children, to the elderly. The modification of treatments allow for the very precise and gentle application of treatment to even the most delicate of spines and bodies. This is especially helpful for patients who may have a strong spine, but would prefer techniques other than manual adjustments that involve a click of pop.
+          hr
+          h3.uppercase Important information for patients
+          p
+            strong The purpose of your first visit is to determine whether you are in the right place, and whether we can help you. We will talk to you, examine you thoroughly, review any imaging studies, and give you our honest impression.  When further testing is required to get a definitive diagnosis and formulate a solution to your problem we work through this with you at your follow up visit and if we can help and with your consent, we can start treatment. 
+          a.button.primary(href="./frequently-asked-questions.pug") Frequently Asked Questions
       include inc/articles
       include inc/contact
     include inc/footer
