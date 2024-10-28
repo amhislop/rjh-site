@@ -1557,6 +1557,7 @@ body.is-touch {
     }
 
     .mainmenu {
+        overflow: hidden;
         background-color: black;
         justify-content: space-between;
         display: flex;
