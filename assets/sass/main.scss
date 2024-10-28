@@ -2189,22 +2189,37 @@ html:has(.close-navigation:checked) {
     width: 1px;
     height: 1px;
 }
+.submenu {
+    display: none;
+}
+@include breakpoint('<=medium') {
+    .submenu {
+        position: sticky;
+        display: block;
+        top: 0;
+        background: rgb(0 0 0 / 90%);
+    }
 
-// @include breakpoint('<=large') {
-//     .mainmenu {
-//         margin-left: $size-header-width;
-//         max-width: none;
-//         padding: ($size-header-pad * 2) $size-header-pad $size-header-pad $size-header-pad;
-//         width: calc(100% - #{$size-header-width});
-//     }
-// }
+    ul.subnav-list {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        gap: 1rem;
+        /* margin-bottom: 0; */
+    }
 
-// .mobile-open-button-wrapper {
-//     // display: none;
-//     // @include breakpoint('<=large') {
-//     display: block;
-//     position: fixed;
-//     top: 0;
-//     right: 0;
-//     // }
-// }
+    ul.subnav-list li {
+        flex: 1;
+    }
+
+    ul.subnav-list li a {
+        background: #49bf9d;
+        color: #1f1815;
+        border-radius: 0.5em;
+        padding: 0.25rem 1rem;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}

@@ -3102,4 +3102,37 @@ html:has(.close-navigation:checked) .nav-list {
   height: 1px;
 }
 
+.submenu {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .submenu {
+    position: sticky;
+    display: block;
+    top: 0;
+    background: rgba(0, 0, 0, 0.9);
+  }
+  ul.subnav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+    /* margin-bottom: 0; */
+  }
+  ul.subnav-list li {
+    flex: 1;
+  }
+  ul.subnav-list li a {
+    background: #49bf9d;
+    color: #1f1815;
+    border-radius: 0.5em;
+    padding: 0.25rem 1rem;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+
 /*# sourceMappingURL=main.min.css.map */
