@@ -2034,15 +2034,28 @@ body.is-touch {
         padding: 0.5em 1em;
         border-bottom: none;
         &.contact {
+            color: _palette(accent1, bg);
+            // background: _palette(accent1, bg);
+            // color: _palette(accent2, bg);
+            border-radius: 0.5em;
+            border-width: 2px !important;
+            border: 2px solid transparent;
+            &:hover {
+                // color: #{_palette(fg-bold)} !important;
+                border-color: currentColor;
+            }
+        }
+        &:hover {
+            color: _palette(accent1, bg);
+        }
+
+        &.bookings {
             background: _palette(accent1, bg);
             color: _palette(accent2, bg);
             border-radius: 0.5em;
             &:hover {
                 color: #{_palette(fg-bold)} !important;
             }
-        }
-        &:hover {
-            color: _palette(accent1, bg);
         }
     }
 }

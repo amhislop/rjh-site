@@ -2977,15 +2977,24 @@ body.is-touch .poptrox-popup .closer {
   border-bottom: none;
 }
 .nav-list a.contact {
+  color: #49bf9d;
+  border-radius: 0.5em;
+  border-width: 2px !important;
+  border: 2px solid transparent;
+}
+.nav-list a.contact:hover {
+  border-color: currentColor;
+}
+.nav-list a:hover {
+  color: #49bf9d;
+}
+.nav-list a.bookings {
   background: #49bf9d;
   color: #1f1815;
   border-radius: 0.5em;
 }
-.nav-list a.contact:hover {
+.nav-list a.bookings:hover {
   color: #4c4c4c !important;
-}
-.nav-list a:hover {
-  color: #49bf9d;
 }
 
 /* Menu button, display:none on large screens */
