@@ -1544,6 +1544,21 @@ body.is-touch {
     }
 }
 
+.mainmenu {
+    overflow: hidden;
+    background-color: black;
+    justify-content: space-between;
+    display: flex;
+    margin-left: 35%;
+    width: calc(100% - #{$size-header-width});
+    padding-block: 0.5rem;
+    padding-left: $size-header-pad;
+    position: fixed;
+    z-index: 100;
+    opacity: 0.9;
+    transition: background-color 0.5s ease-in-out;
+}
+
 /* XLarge */
 
 @include breakpoint('<=xlarge') {
@@ -1554,21 +1569,6 @@ body.is-touch {
     select,
     textarea {
         font-size: 12pt;
-    }
-
-    .mainmenu {
-        overflow: hidden;
-        background-color: black;
-        justify-content: space-between;
-        display: flex;
-        margin-left: 35%;
-        width: calc(100% - #{$size-header-width});
-        padding-block: 0.5rem;
-        padding-left: $size-header-pad;
-        position: fixed;
-        z-index: 100;
-        opacity: 0.9;
-        transition: background-color 0.5s ease-in-out;
     }
 }
 

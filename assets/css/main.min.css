@@ -2621,6 +2621,21 @@ body.is-touch .poptrox-popup .closer {
   opacity: 1 !important;
 }
 
+.mainmenu {
+  overflow: hidden;
+  background-color: black;
+  justify-content: space-between;
+  display: flex;
+  margin-left: 35%;
+  width: calc(100% - 35%);
+  padding-block: 0.5rem;
+  padding-left: 4em;
+  position: fixed;
+  z-index: 100;
+  opacity: 0.9;
+  transition: background-color 0.5s ease-in-out;
+}
+
 /* XLarge */
 @media screen and (max-width: 1800px) {
   /* Basic */
@@ -2629,20 +2644,6 @@ body.is-touch .poptrox-popup .closer {
   select,
   textarea {
     font-size: 12pt;
-  }
-  .mainmenu {
-    overflow: hidden;
-    background-color: black;
-    justify-content: space-between;
-    display: flex;
-    margin-left: 35%;
-    width: calc(100% - 35%);
-    padding-block: 0.5rem;
-    padding-left: 4em;
-    position: fixed;
-    z-index: 100;
-    opacity: 0.9;
-    transition: background-color 0.5s ease-in-out;
   }
 }
 @media screen and (min-width: 1281px) {
